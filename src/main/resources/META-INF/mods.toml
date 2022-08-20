@@ -8,7 +8,7 @@ version="0.1"
 displayName="Nether Ending"
 authors="NorthWestWind"
 description='''
-Generates the Nether with The End's noise settings.
+Overrides the Nether's generation. Defaults to use Floating Islands for the noise generator settings.
 '''
 
 [[dependencies.netherislands]]
