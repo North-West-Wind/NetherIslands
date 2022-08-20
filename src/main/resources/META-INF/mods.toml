@@ -6,6 +6,7 @@ license="CC BY-NC-SA 4.0"
 modId="netherislands"
 version="0.1"
 displayName="Nether Ending"
+logoFile="logo.png"
 authors="NorthWestWind"
 description='''
 Overrides the Nether's generation. Defaults to use Floating Islands for the noise generator settings.
