@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "package": "ml.northwestwind.netherislands.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "netherislands.refmap.json",
+  "mixins": [
+    "MixinNoiseGeneratorSettings"
+  ],
+  "minVersion": "0.8"
+}

@@ -5,10 +5,10 @@ license="CC BY-NC-SA 4.0"
 [[mods]]
 modId="netherislands"
 version="0.1"
-displayName="Nether Islands"
+displayName="Nether Ending"
 authors="NorthWestWind"
 description='''
-Generates the Nether like the End.
+Generates the Nether with The End's noise settings.
 '''
 
 [[dependencies.netherislands]]
