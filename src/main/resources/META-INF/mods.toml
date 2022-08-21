@@ -5,7 +5,7 @@ license="CC BY-NC-SA 4.0"
 [[mods]]
 modId="netherislands"
 version="0.1"
-displayName="Nether Ending"
+displayName="Nether Islands"
 updateJSONURL="https://raw.githubusercontent.com/North-West-Wind/NetherIslands/main/update.json"
 logoFile="logo.png"
 authors="NorthWestWind"
