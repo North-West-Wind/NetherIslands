@@ -34,6 +34,8 @@ public abstract class MixinNoiseGeneratorSettings {
         return null;
     }
 
+    @Shadow @Final private int seaLevel;
+
     @ModifyArg(method = "nether", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/gen/DimensionSettings;<init>(Lnet/minecraft/world/gen/settings/DimensionStructuresSettings;Lnet/minecraft/world/gen/settings/NoiseSettings;Lnet/minecraft/block/BlockState;Lnet/minecraft/block/BlockState;IIIZ)V"), index = 1)
     private static NoiseSettings useCustomSettingsForData(NoiseSettings settings) {
         if (!NetherIslandsConfig.isEnabled()) return settings;
@@ -59,5 +61,26 @@ public abstract class MixinNoiseGeneratorSettings {
     @Inject(method = "<clinit>", at = @At("TAIL"))
     private static void registerNether(CallbackInfo ci) {
         register(NETHER, nether(NetherIslandsHolder.netherSettings, NetherIslandsHolder.netherBlock, NetherIslandsHolder.netherFluid, NETHER.location()));
+    }
+
+    @ModifyArg(method = "nether", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/gen/DimensionSettings;<init>(Lnet/minecraft/world/gen/settings/DimensionStructuresSettings;Lnet/minecraft/world/gen/settings/NoiseSettings;Lnet/minecraft/block/BlockState;Lnet/minecraft/block/BlockState;IIIZ)V"), index = 4)
+    private static int changeBedrockRoof(int bedrockRoof) {
+        JsonObject override = NetherIslandsConfig.getDimensionSettings();
+        if (override == null) return bedrockRoof;
+        return override.has("bedrockRoofPosition") ? override.get("bedrockRoofPosition").getAsInt() : bedrockRoof;
+    }
+
+    @ModifyArg(method = "nether", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/gen/DimensionSettings;<init>(Lnet/minecraft/world/gen/settings/DimensionStructuresSettings;Lnet/minecraft/world/gen/settings/NoiseSettings;Lnet/minecraft/block/BlockState;Lnet/minecraft/block/BlockState;IIIZ)V"), index = 5)
+    private static int changeBedrockFloor(int bedrockFloor) {
+        JsonObject override = NetherIslandsConfig.getDimensionSettings();
+        if (override == null) return bedrockFloor;
+        return override.has("bedrockFloorPosition") ? override.get("bedrockFloorPosition").getAsInt() : bedrockFloor;
+    }
+
+    @ModifyArg(method = "nether", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/gen/DimensionSettings;<init>(Lnet/minecraft/world/gen/settings/DimensionStructuresSettings;Lnet/minecraft/world/gen/settings/NoiseSettings;Lnet/minecraft/block/BlockState;Lnet/minecraft/block/BlockState;IIIZ)V"), index = 6)
+    private static int changeSeaLevel(int seaLevel) {
+        JsonObject override = NetherIslandsConfig.getDimensionSettings();
+        if (override == null) return seaLevel;
+        return override.has("seaLevel") ? override.get("seaLevel").getAsInt() : seaLevel;
     }
 }

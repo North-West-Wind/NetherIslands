@@ -4,7 +4,7 @@ license="CC BY-NC-SA 4.0"
 
 [[mods]]
 modId="netherislands"
-version="0.1"
+version="0.2"
 displayName="Nether Islands"
 updateJSONURL="https://raw.githubusercontent.com/North-West-Wind/NetherIslands/main/update.json"
 logoFile="logo.png"
