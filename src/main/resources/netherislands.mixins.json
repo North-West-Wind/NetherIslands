@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "netherislands.refmap.json",
   "mixins": [
-    "MixinNoiseGeneratorSettings"
+    "MixinNoiseGeneratorSettings",
+    "MixinSurfaceRuleData"
   ],
   "minVersion": "0.8"
 }

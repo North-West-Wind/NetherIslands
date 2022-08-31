@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import ml.northwestwind.netherislands.utils.FileWatcher;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.loading.FMLPaths;
 
 import java.io.FileNotFoundException;
@@ -59,12 +59,13 @@ public class NetherIslandsConfig {
                 obj.addProperty("noise_override", NOISE_OVERRIDE);
                 obj.addProperty("dimension_override", DIMENSION_OVERRIDE);
                 JsonObject noise = new JsonObject();
+                noise.addProperty("minY", 0);
                 noise.addProperty("height", 256);
                 if (NOISE_OVERRIDE) NOISE_SETTINGS = noise;
                 obj.add("noise_settings", noise);
                 JsonObject dimension = new JsonObject();
                 dimension.addProperty("seaLevel", 0);
-                dimension.addProperty("bedrockRoofPosition", -10);
+                // bedrock roof doesn't matter because it is already gone
                 dimension.addProperty("bedrockFloorPosition", -10);
                 if (DIMENSION_OVERRIDE) DIMENSION_SETTINGS = dimension;
                 obj.add("dimension_settings", dimension);
