@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "netherislands.refmap.json",
   "mixins": [
+    "InvokerNoiseRouterData",
     "MixinNoiseGeneratorSettings",
     "MixinSurfaceRuleData"
   ],
