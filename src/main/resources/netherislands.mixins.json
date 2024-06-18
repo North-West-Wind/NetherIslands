@@ -5,7 +5,6 @@
   "refmap": "netherislands.refmap.json",
   "mixins": [
     "AccessorNoiseSettings",
-    "AccessorSurfaceRuleData",
     "InvokerNoiseRouterData",
     "MixinNoiseGeneratorSettings",
     "MixinSurfaceRuleData"

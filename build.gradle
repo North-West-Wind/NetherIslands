@@ -43,8 +43,8 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', 'netherislands'
             //property 'mixin.env.remapRefMap', 'true'
             //property 'mixin.env.refMapRemappingFile',"${buildDir}/createSrgToMcp/output.srg"
-            property 'mixin.debug', 'true'
-            property 'mixin.debug.export', 'true'
+            //property 'mixin.debug', 'true'
+            //property 'mixin.debug.export', 'true'
         }
 
         server {
@@ -106,7 +106,10 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 mixin {
-    add sourceSets.main, "netherislands.refmap.json"
+    add sourceSets.main, "mixins.netherislands.refmap.json"
 
     config "netherislands.mixins.json"
+    debug.verbose = true
+    debug.export = true
+    dumpTargetOnFailure = true
 }
