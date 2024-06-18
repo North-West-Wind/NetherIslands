@@ -19,7 +19,7 @@ public class NetherIslandsConfig {
     private static String NOISE_GEN_REPLACEMENT = "minecraft:floating_islands";
     private static JsonObject NOISE_SETTINGS = null, DIMENSION_SETTINGS = null;
 
-    static {
+    public static void earlyRead() {
         NetherIslands.LOGGER.info("Doing early config reading");
         readEverything();
         new FileWatcher(CONFIG_FILE, NetherIslandsConfig::readEverything).start();

@@ -1,9 +1,11 @@
 {
   "required": true,
   "package": "ml.northwestwind.netherislands.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_17",
   "refmap": "netherislands.refmap.json",
   "mixins": [
+    "AccessorNoiseSettings",
+    "AccessorSurfaceRuleData",
     "InvokerNoiseRouterData",
     "MixinNoiseGeneratorSettings",
     "MixinSurfaceRuleData"

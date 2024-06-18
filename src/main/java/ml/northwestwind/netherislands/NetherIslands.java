@@ -25,5 +25,6 @@ public class NetherIslands {
         NOISE_ROUTER.register("end", () -> InvokerNoiseRouterData.invokeEnd(BuiltinRegistries.DENSITY_FUNCTION));
         NOISE_ROUTER.register("dummy", InvokerNoiseRouterData::invokeNone);
         NOISE_ROUTER.register(FMLJavaModLoadingContext.get().getModEventBus());*/
+        NetherIslandsConfig.earlyRead();
     }
 }
