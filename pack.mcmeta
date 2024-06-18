@@ -1,6 +1,6 @@
 {
 	"pack": {
 		"description": "Overrides the Nether's generation. Defaults to use Floating Islands for the noise generator settings.",
-		"pack_format": 41
+		"pack_format": 48
 	}
 }
